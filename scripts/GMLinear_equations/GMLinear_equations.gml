@@ -167,11 +167,11 @@ function rmn_solve(M, b, vout=array_create(array_length(M[0]), 0), nullspace=und
 		for (var j = 0; j < n; ++j) {
 			if (!colpivoted[j]) {
 				var nsb = array_create(n, 0);
-				nsb[@j] = 1;
 				for (var i = m-1; i >= 0; --i) {
 					nsb[@rowpivot[i]] = -A[i][j];
 				}
-				rn_unit(nsb, nsb);
+				nsb[@j] = 1;
+				//rn_unit(nsb, nsb);
 				array_push(nullspace, nsb);
 			}
 		}
