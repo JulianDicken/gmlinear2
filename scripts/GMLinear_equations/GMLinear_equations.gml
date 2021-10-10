@@ -171,7 +171,7 @@ function rmn_solve(M, b, vout=array_create(array_length(M[0]), 0), nullspace=und
 					nsb[@rowpivot[i]] = -A[i][j];
 				}
 				nsb[@j] = 1;
-				//rn_unit(nsb, nsb);
+				rn_unit(nsb, nsb);
 				array_push(nullspace, nsb);
 			}
 		}
